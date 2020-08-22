@@ -10,24 +10,19 @@ def hello():
 def givenString():
     req_data = request.get_json()
     
-    string = req_data['string_to_cut']
+    cutting_string = req_data['string_to_cut']
 
-    return '<h1>This is a test.</h1>'
 
-    def modifyString():
-        pass
+    def modify_string():
+       return(cutting_string[2:len(cutting_string):3])
+
+
+    modified_string = {"return_string": modify_string()}
+
+    return (modified_string)
 
 
 
 
 if __name__ == "__main__":
     app.run()
-
-
-
-
-
-
-#Use Postman to send POST request to the server "string_to_cut"
-#Write function to return a new string containing every third letter from the original string 
-#Return modified string
